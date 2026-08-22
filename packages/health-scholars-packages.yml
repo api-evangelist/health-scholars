@@ -1,0 +1,30 @@
+generated: '2026-08-22'
+method: searched
+source: >-
+  Searched npm (registry.npmjs.org search API), PyPI (pypi.org/pypi/<name>/json), and the
+  company's GitHub organization github.com/HealthScholars, 2026-08-22.
+package_count: 0
+packages: []
+note: >-
+  No first-party client library exists in any public registry. npm search for "healthscholars",
+  "health-scholars", "upskillai" and "upskill-ai" returned no package published by this company;
+  PyPI returned 404 for healthscholars, health-scholars and upskillai. The company's GitHub
+  organization (github.com/HealthScholars, display name "UpSkillAI", website upskillai.com,
+  contact platform@upskillai.com) has only two public repositories and BOTH are forks of
+  unrelated third-party sample projects — todo-vue (a Vue sample todo app) and SimpleGraphQL
+  (a C# GraphQL client) — so neither is a distributed SDK. No SDKs pointer is wired into
+  apis.yml, because there is no SDK to point at.
+registries_checked:
+- registry: npm
+  queries: [healthscholars, health-scholars, upskillai, upskill-ai]
+  result: no first-party package
+- registry: pypi
+  queries: [healthscholars, health-scholars, upskillai]
+  result: 404 on every name
+- registry: github
+  queries: [HealthScholars]
+  result: 2 public repos, both forks of unrelated third-party samples
+namesake_warning: >-
+  Two unrelated GitHub organizations named "upskillai" (created 2023) and "upskill-ai" (created
+  2025) exist and are NOT this company — neither links to upskillai.com and their repos are
+  generic GitHub/Terraform demo material. They were deliberately excluded.

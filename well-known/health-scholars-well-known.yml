@@ -1,0 +1,69 @@
+generated: '2026-08-22'
+method: probed
+source: >-
+  Live GET probes of /.well-known/* on the company website, its hosted application, and both
+  API backend hosts, 2026-08-22.
+note: >-
+  No /.well-known document is served on any host. Every path returned a genuine negative:
+  upskillai.com and app.upskillai.com return real 404s (WordPress and an Angular SPA
+  respectively, both with a 404 status rather than a soft-200 catch-all), api.upskillai.com
+  returns a 13-byte text/plain "404 Not Found", and api.healthscholars.com — an AWS API
+  Gateway — returns a 23-byte {"message":"Forbidden"} for every path including the root.
+  This file records a measured ABSENCE. No WellKnown or SecurityTxt pointer is wired into
+  apis.yml, because none of these hosts serves such a surface.
+hit_count: 0
+hosts:
+- host: https://upskillai.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: https://app.upskillai.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: https://api.upskillai.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: https://api.healthscholars.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 403
+  - path: /.well-known/openid-configuration
+    status: 403
+  - path: /.well-known/oauth-authorization-server
+    status: 403
+  - path: /.well-known/api-catalog
+    status: 403
+  - path: /.well-known/ai-plugin.json
+    status: 403
+agent_card_probe:
+  note: >-
+    /.well-known/agent-card.json and /.well-known/agent.json were probed on all four hosts as
+    part of contract discovery. All missed (404 on the three public hosts, 403 on
+    api.healthscholars.com). No a2a/ artifact was written, per the search-only rule.
+  status: miss

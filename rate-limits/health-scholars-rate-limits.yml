@@ -1,0 +1,21 @@
+generated: '2026-08-22'
+method: searched
+source: >-
+  Searched the full published site (12 pages per wp-sitemap) plus both API backend hosts for any
+  documented rate limit, 2026-08-22.
+limit_count: 0
+rate_limits: []
+headers: []
+note: >-
+  No rate limits are documented anywhere, because there is no public developer program to document
+  them for. The company publishes no developer portal, API reference or machine-readable contract.
+  Its production backend (https://api.upskillai.com, read from the Angular application bundle at
+  app.upskillai.com as environment apiUrl) returns a bare 13-byte "404 Not Found" to unauthenticated
+  callers and exposes no rate-limit response headers; the legacy AWS API Gateway host
+  api.healthscholars.com returns {"message":"Forbidden"} with no RateLimit-*, X-RateLimit-* or
+  Retry-After headers. An honest zero.
+evidence:
+- url: https://api.upskillai.com/
+  status: 404
+- url: https://api.healthscholars.com/
+  status: 403

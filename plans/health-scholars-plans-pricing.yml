@@ -1,0 +1,22 @@
+generated: '2026-08-22'
+method: searched
+source: https://upskillai.com/demo/
+plan_count: 0
+plans: []
+note: >-
+  The company publishes no pricing or plan tiers of any kind. https://upskillai.com/pricing/
+  returns HTTP 404, and no pricing page appears in the site's own sitemap (wp-sitemap-posts-page-1.xml
+  lists all 12 published pages: home, about, contact, demo, healthcare, defense, ems, stroke,
+  what-is-ai-powered-xr-training, privacy-policy, privacy-policy-meta and terms-of-use). The
+  commercial motion is a "DEMO" request form at https://upskillai.com/demo/ feeding an enterprise
+  sales conversation; the terms of use confirm commercial terms are set per-customer in an
+  "Order Form". An honest zero, not an omission.
+pricing_model: enterprise-quote
+sales_motion: demo-request-form
+evidence:
+- url: https://upskillai.com/pricing/
+  status: 404
+- url: https://upskillai.com/demo/
+  status: 200
+- url: https://upskillai.com/terms-of-use/
+  status: 200
