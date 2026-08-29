@@ -12,6 +12,17 @@ description: >-
   The production backend behind its own application (api.upskillai.com, with the legacy AWS API
   Gateway host api.healthscholars.com) is private and rejects unauthenticated requests.
 url: https://raw.githubusercontent.com/api-evangelist/health-scholars/refs/heads/main/apis.yml
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://upskillai.com/wp-content/uploads/2025/10/Health_Scholars_Logo_alt.svg
 x-type: company
 x-source: harvest:secondary-market
